@@ -113,11 +113,9 @@ export default {
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-<<<<<<< HEAD
-  font-size: 1rem;
-=======
+
   font-size: 14px;
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
+
 }
 .playlist-desc {
   width: 100%;
@@ -127,11 +125,7 @@ export default {
   left: 0px;
   background: rgba(0, 0, 0, 0.4);
   color: #ffffff;
-<<<<<<< HEAD
-  font-size: 1rem;
-=======
   font-size: 14px;
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
 }
 .playlist-play {
   width: 30px;
@@ -145,11 +139,7 @@ export default {
   justify-content: center;
   align-items: center;
   i{
-<<<<<<< HEAD
-    font-size:20px ;
-=======
     font-size: 20px;
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
    color: red;
   }
   }

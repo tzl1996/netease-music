@@ -48,11 +48,7 @@ export default {
   methods:{
     changePage(page){
       this.$bus.$emit('changeOffset',page);
-<<<<<<< HEAD
-     
       this.$bus.$emit('scrollToTop');
-=======
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
     }
   },
 }

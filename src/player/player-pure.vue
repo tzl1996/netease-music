@@ -1,22 +1,23 @@
 <template>
-<<<<<<< HEAD
-  <div class="playpure scroll" ref="scroll">
-=======
-  <div class="playpure scroll">
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
+  <div class="playpure scroll"
+        ref="scroll">
     <div class="display-container">
       <div class="display-top">
         <div class="display-music">
           <div class="cover">
             <div class="play-bar-support">
-              <img src="../assets/player/play-bar-support.png" alt="">
+              <img src="../assets/player/play-bar-support.png"
+                   alt="">
             </div>
-            <div class="play-bar" :style="barStyle">
-              <img src="../assets/player/play-bar.png" alt="">
+            <div class="play-bar"
+                 :style="barStyle">
+              <img src="../assets/player/play-bar.png"
+                   alt="">
             </div>
             <div class="play-cover">
-              <img v-lazy="song.pic || song.picUrl" alt=""
-               v-if="song">
+              <img v-lazy="song.pic || song.picUrl"
+                   alt=""
+                   v-if="song">
             </div>
           </div>
           <div class="lyric">
@@ -25,103 +26,98 @@
               <div class="song-artist">{{song.artist}}</div>
             </div>
             <PlayerLyric :lyric="lyric"
-            :currentTime="currentTime"
-<<<<<<< HEAD
-            :middle=true 
-            />
-=======
-            :middle=true />
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
+                         :currentTime="currentTime" />
           </div>
         </div>
-        <div class="cancel-display" @click="cancelShowPure">
+        <div class="cancel-display"
+             @click="cancelShowPure">
           <i class="el-icon-tzl-zuixiaohua"></i>
         </div>
       </div>
-      <Recommends :recommends="recommends" class="comments"/>
-      <Pagination :limit="limit" :offset="offset" :total="total"/>
+      <Recommends :recommends="recommends"
+                  class="comments" />
+      <Pagination :limit="limit"
+                  :offset="offset"
+                  :total="total" />
     </div>
   </div>
 </template>
 
 <script>
 import Pagination from 'common/pagination/Pagination'
-import PlayerLyric from './player-lyric.vue';
-import Recommends from 'content/recommends/Recommends';
-import {reqMusicRecommend} from 'network/detail';
+import PlayerLyric from './player-lyric.vue'
+import Recommends from 'content/recommends/Recommends'
+import { reqMusicRecommend } from 'network/detail'
 export default {
   name: 'PlayerPure',
-  components:{
+  components: {
     PlayerLyric,
     Recommends,
     Pagination,
   },
-  props:{
-    song:{
-      type:Object,
-      default: () => {name:''},
+  props: {
+    song: {
+      type: Object,
+      default: () => {
+        name: ''
+      },
     },
-    lyric:{
-      type:String,
-      default:'暂无歌词'
+    lyric: {
+      type: String,
+      default: '暂无歌词',
     },
-    currentTime:{
-      type:Number,
-      default:0,
+    currentTime: {
+      type: Number,
+      default: 0,
+    },
+  },
+  data() {
+    return {
+      recommends: [],
+      total: null,
+      offset: 1,
+      limit: 30,
     }
   },
-  data(){
-    return{
-      recommends:[],
-      total:null,
-      offset:1,
-      limit:30,
-    }
-  },
-  created(){
-    this.$bus.$on('changeOffset',(page) =>{
+  created() {
+    this.$bus.$on('changeOffset', (page) => {
       this.offset = page
       this.getComment()
-<<<<<<< HEAD
-    });
-     
-    this.$bus.$on('scrollToTop',() =>{
-      this.$refs.scroll.scrollTop = 500;
     })
-  
-=======
+    this.$bus.$on('scrollToTop', () => {
+      this.$nextTick(() =>{
+        this.$refs.scroll.scrollTop = 500
+      })
     })
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
   },
-  computed:{
-    barStyle(){
+  computed: {
+    barStyle() {
       return {
         transform: this.getIsPlay ? `rotate(-7deg)` : `rotate(-50deg)`,
       }
     },
-    getIsPlay(){
-      return this.$parent.isPlay;
-    }
+    getIsPlay() {
+      return this.$parent.isPlay
+    },
   },
-  watch:{
-    song:{
-      immediate:true,
-      handler(){
-        this.getComment();
-      }
-    }
+  watch: {
+    song: {
+      immediate: true,
+      handler() {
+        this.getComment()
+      },
+    },
   },
   methods: {
     cancelShowPure() {
       this.$parent.isPlayPure = false
     },
-    getComment(){
-      reqMusicRecommend(this.song.id,this.limit,this.offset).then((res) =>{
-        
-        this.recommends = res.data.comments;
-        this.total = res.data.total;
+    getComment() {
+      reqMusicRecommend(this.song.id, this.limit, this.offset).then((res) => {
+        this.recommends = res.data.comments
+        this.total = res.data.total
       })
-    }
+    },
   },
 }
 </script>
@@ -150,11 +146,7 @@ export default {
 }
 .display-music{
   flex: 1;
-<<<<<<< HEAD
   height: 500px;
-=======
-  height: 400px;
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
   position: relative;
   display: flex;
   .cover{

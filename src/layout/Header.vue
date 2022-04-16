@@ -13,23 +13,15 @@
         <div class="item">
           <transition name="header-side">
             <i class="el-icon-tzl-zuixiaohua"
-<<<<<<< HEAD
                v-show="isShow"
                @click="handleMin"></i>
-=======
-               v-show="isShow"></i>
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
           </transition>
         </div>
         <div class="item">
           <transition name="header-side">
             <i class="el-icon-tzlmaximizezuidahua"
-<<<<<<< HEAD
                v-show="isShow"
                @click="handleMax"></i>
-=======
-               v-show="isShow"></i>
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
           </transition>
         </div>
       </div>
@@ -63,31 +55,19 @@
             <img :src="getAvatar"
                  alt="">
           </div>
-<<<<<<< HEAD
           <div class="user-name">
-=======
-          <div class="user-name"
-               >
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
             <el-popover placement="bottom-start"
                         trigger="hover"
                         width="20px"
                         popper-class="logout-popover">
-<<<<<<< HEAD
               <div class="logout-button"
                    @click="confirmLogout">退出登录</div>
               <template slot="reference">
                 <div>{{getNickname}}</div>
               </template>
-=======
-                <div class="logout-button" @click="confirmLogout">退出登录</div>
-              <template slot="reference"><div>{{getNickname}}</div></template>
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
             </el-popover>
-
           </div>
         </div>
-
       </div>
       <div class="item-right">
         <div class="item">
@@ -100,9 +80,7 @@
             <div class="el-icon-tzljingzi"
                  slot="reference"
                  @click="visible = !visible"></div>
-
           </el-popover>
-
         </div>
         <div class="item">
           <a href=""
@@ -149,12 +127,8 @@
 import Search from 'content/search'
 import PhoneLogin from 'content/login/PhoneLogin'
 import Register from 'content/login/Register'
-<<<<<<< HEAD
 import { reqLogout } from 'network/user'
-=======
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
 // import QrcodeLogin from 'content/login/QrcodeLogin';
-
 export default {
   name: 'LayoutHeader',
   components: {
@@ -169,10 +143,7 @@ export default {
       visible: false,
       isLogining: true,
       showLogin: false,
-<<<<<<< HEAD
-      fullScreen:false,
-=======
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
+      fullScreen: false,
     }
   },
   computed: {
@@ -200,17 +171,16 @@ export default {
       this.isLogining = true
       this.showLogin = false
     },
-<<<<<<< HEAD
-    handleMin(){
-      if(this.fullScreen){
+    handleMin() {
+      if (this.fullScreen) {
         document.exitFullscreen()
-        this.fullScreen = false;
+        this.fullScreen = false
       }
     },
-    handleMax(){
-      if(!this.fullScreen){
-        this.fullScreen = true;
-        document.documentElement.requestFullscreen();
+    handleMax() {
+      if (!this.fullScreen) {
+        this.fullScreen = true
+        document.documentElement.requestFullscreen()
       }
     },
     confirmLogout() {
@@ -222,7 +192,6 @@ export default {
         .then(() => {
           //清除cookie localstorage
           reqLogout().then((res) => {
-            
             if (res.data.code == 200) {
               this.$store.commit('handleLogout')
               this.$router.push('/')
@@ -231,50 +200,45 @@ export default {
                 type: 'success',
                 message: '退出成功!',
               })
-            }else{
+            } else {
               this.$message({
-                type:'err',
-                message:'退出失败！'
+                type: 'err',
+                message: '退出失败！',
               })
             }
           })
         })
         .catch(() => {})
     },
-=======
-    confirmLogout(){
-      this.$confirm ('确定退出登录？',{
-        confirmButtonText:'确定',
-        canceButtonText:'取消',
-        type:'warning',
-      }).then(() =>{
-        //清除cookie localstorage
-        this.$store.commit('handleLogout')
-        this.$router.push('/');
-        location.reload();
-        this.$message({
-          type:'success',
-          message:'退出成功!'
-        })
-      }).catch(() =>{
-        
+    confirmLogout() {
+      this.$confirm('确定退出登录？', {
+        confirmButtonText: '确定',
+        canceButtonText: '取消',
+        type: 'warning',
       })
-    }
-    
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
+        .then(() => {
+          //清除cookie localstorage
+          this.$store.commit('handleLogout')
+          this.$router.push('/')
+          location.reload()
+          this.$message({
+            type: 'success',
+            message: '退出成功!',
+          })
+        })
+        .catch(() => {})
+    },
   },
 }
 </script>
 <style>
-<<<<<<< HEAD
 .logout-popover {
   min-width: 30px;
 }
-=======
-  .logout-popover{
-    min-width:30px; 
-  }
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
+
+.logout-popover {
+  min-width: 30px;
+}
 </style>
 <style lang="less" scoped>
 .music-header {
@@ -298,35 +262,34 @@ export default {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
     .item {
+      
       width: 18px;
       height: 18px;
       border-radius: 50%;
       cursor: pointer;
       overflow: hidden;
-<<<<<<< HEAD
+
       line-height: 16px;
       text-align: center;
       i {
         font-size: 12px;
         font-weight: 600;
         color: rgba(0, 0, 0, 0.85);
-=======
-      line-height: 18px;
-      i {
-        display: inline-block;
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
+        line-height: 18px;
       }
     }
-    .item:nth-child(1) {
-      background: #ed655a;
-    }
-    .item:nth-child(2) {
-      background: #e0c04c;
-    }
-    .item:nth-child(3) {
-      background: #72be47;
-    }
+      .item:nth-child(1) {
+        background: #ed655a;
+      }
+      .item:nth-child(2) {
+        background: #e0c04c;
+      }
+      .item:nth-child(3) {
+        background: #72be47;
+      }
+    
   }
   &-right {
     width: 60px;
@@ -334,7 +297,6 @@ export default {
     align-items: center;
     justify-content: flex-end;
     text-align: right;
-
     i {
       font-size: 30px;
       color: rgb(235, 227, 128);
@@ -482,11 +444,8 @@ export default {
     }
   }
 }
-<<<<<<< HEAD
+
 .logout-button {
-=======
-.logout-button{
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
   cursor: pointer;
 }
 .header-side-enter-active {

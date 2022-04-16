@@ -3,14 +3,14 @@ import Individuation from 'views/individuation/Individuation';
 const AllMusicList = () => import('views/music-list/all-music-list')
 const RankList = () => import('views/rank-list/rank-list')
 const ArtistList = () => import('views/artist-list/artist-category')
-const ArtistDetail =  () => import('views/artist-detail/artist-detail')
+const ArtistDetail = () => import('views/artist-detail/artist-detail')
 const Mv = () => import('views/mv/mv')
 const NewSongs = () => import('views/new-songs/new-songs')
 const MusicListDetail = () => import('views/list-detail/MusicListDetail');
 const SearchDetail = () => import('views/search-detail/SearchDetail');
 const SearchSongs = () => import('views/search-detail/childComps/SearchSongs')
 const SearchArtists = () => import('views/search-detail/childComps/SearchArtists')
-const SearchAlbums= () => import('views/search-detail/childComps/SearchAlbums')
+const SearchAlbums = () => import('views/search-detail/childComps/SearchAlbums')
 const SearchPlayLists = () => import('views/search-detail/childComps/SearchPlayLists')
 const SearchMv = () => import('views/search-detail/childComps/SearchMv')
 const MvDetail = () => import('views/mv/mv-detail');
@@ -48,12 +48,8 @@ const routes = [
   //歌手详情页
   {
     path: '/artist-detail',
-<<<<<<< HEAD
-    component: () =>import('views/artist-detail/artist-detail'),
-=======
-    component: ArtistDetail,
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
-    name:'artist-detail'
+    component: () => import('views/artist-detail/artist-detail'),
+    name: 'artist-detail'
   },
   //MV
   {
@@ -62,7 +58,7 @@ const routes = [
   },
   {
     path: '/mv-detail/:mvId',
-    name:'mv-detail',
+    name: 'mv-detail',
     component: MvDetail
   },
   {
@@ -70,35 +66,35 @@ const routes = [
     component: NewSongs
   },
   {
-    path:'/search-detail/:keyword',
+    path: '/search-detail/:keyword',
     // name:'search-detail',
-    component:SearchDetail,
-    children:[
+    component: SearchDetail,
+    children: [
       /* 重定向 */
       {
         path: '/',
         redirect: 'songs'
-    },
-      {
-        path:'songs',
-        name:'songs',
-        component:SearchSongs,
       },
       {
-        path:'artists',
-        component:SearchArtists,
+        path: 'songs',
+        name: 'songs',
+        component: SearchSongs,
       },
       {
-        path:'albums',
-        component:SearchAlbums,
+        path: 'artists',
+        component: SearchArtists,
       },
       {
-        path:'playlists',
-        component:SearchPlayLists,
+        path: 'albums',
+        component: SearchAlbums,
       },
       {
-        path:'mv',
-        component:SearchMv,
+        path: 'playlists',
+        component: SearchPlayLists,
+      },
+      {
+        path: 'mv',
+        component: SearchMv,
       },
     ]
   }

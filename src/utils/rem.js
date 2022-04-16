@@ -10,11 +10,11 @@ let htmlFontSize
         size = Math.min(maxFontSize, size)
         size = Math.max(minFontSize, size)
         html.style.fontSize = size + 'px'
-<<<<<<< HEAD
+
         htmlFontSize = size;
-=======
+
         htmlFontSize = size
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
+
     }
     calc()
     window.addEventListener('resize', calc,false)

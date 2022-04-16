@@ -20,11 +20,8 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-import {reqQrcode} from 'network/user'
-=======
+
 import {reqUserAccount} from 'network/user'
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
 import LayoutHeader from "./layout/Header";
 import LayoutAside from "./layout/Aside.vue";
 import LayoutFooter from "./layout/Footer.vue";
@@ -37,13 +34,7 @@ export default {
     LayoutFooter,
     LayoutArticle,
   },
-<<<<<<< HEAD
- 
-=======
-  created(){
-    
-  }
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
+
 };
 </script>
 

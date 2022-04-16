@@ -25,11 +25,7 @@ export function request(config){
         return data;
     }, err =>{
         $store.commit('hiddenLoading');
-<<<<<<< HEAD
-        
-=======
         //如果不return err ,loading一直在转是什么原因？
->>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
         throw err;
         return err;
     });
