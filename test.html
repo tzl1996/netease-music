@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      border:1px solid goldenrod;
+      overflow: auto;
+    }
+    .box1{
+      width: 200px;
+      height: 200px;
+      margin: 20px 0px;
+      background-color: aquamarine;
+      position: relative;
+      left: 10px;
+      top: 1000px;
+    }
+    .box2{
+      width: 200px;
+      height: 100px;
+      margin: 20px 0px;
+      background-color: blanchedalmond;
+     margin: 20px;
+    }
+    .container::after{
+      content:'';
+      display: flex;
+      clear: both;
+      
+    }
+   
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box1"></div>
+      <div class="box2"></div>
+      <button id="debounce">点击防抖加</button>
+      <button id="throttle">点击节流加</button>
+  </div>
+  <script>
+    // 原数据是这样的                   // 去重后数据是这样的
+
+const arr = [{                  
+  "goodsId": "1",                    
+  "quota": 12,                    
+  "skuId": "1"                    
+},                                 
+{                    
+  "goodsId": "2",                    
+  "quota": 12,                    
+  "skuId": "2"                    
+},                    
+{
+  "goodsId": "1",
+  "quota": 12,
+  "skuId": "1"
+}]
+function uniqueFunc(arr,uniId){
+  const res = new Map();
+  return arr.filter((item) =>{
+    if(!res.has(item[uniId]) && res.set(item[uniId],1)){
+      return item;
+    }
+  })
+}
+let newArr = uniqueFunc(arr,'skuId');
+console.log(newArr);
+
+function debounce(fn,delay){
+  let time;
+  return function(){
+    clearTimeout(time);
+    let args = arguments;
+    time = setTimeout(()=>{
+      fn.apply(this,args)
+    },delay)
+  }
+}
+function throttle(fn,delay){
+  let time = 0;
+  return function(){
+    let that = this
+    let now = new Date();
+    if(now -time >= delay){
+      fn.apply(this,arguments)
+      time = now;
+    }
+  }
+}
+function throttle2(fn,delay){
+  let timer = null;
+  return function(){
+    if(!timer){
+      timer = setTimeout(() =>{
+        fn.apply(this,arguments);
+        timer = null;
+      },delay)
+    }
+  }
+}
+function add(){
+  console.log('加加加');
+  console.log(this);
+}
+let btnDe = document.getElementById('debounce');
+let btnThr = document.getElementById('throttle')
+btnDe.addEventListener('click',debounce(add,1000))
+btnThr.addEventListener('click',throttle2(add,1000))
+
+  </script>
+</body>
+</html>

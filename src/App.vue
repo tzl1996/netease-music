@@ -1,28 +1,69 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <layout-header />
+    <div class="main">
+      <div class="main-left">
+        <layout-aside />
+      </div>
+      <div class="main-right">
+        <layout-article />
+      </div>
+    </div>
+    <div class="footer">
+       <layout-footer />
+    </div> -->
+    <layout-header/>
+    <layout-aside/>
+    <layout-article/>
+    <layout-footer/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import {reqQrcode} from 'network/user'
+import LayoutHeader from "./layout/Header";
+import LayoutAside from "./layout/Aside.vue";
+import LayoutFooter from "./layout/Footer.vue";
+import LayoutArticle from "./layout/Article.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    LayoutHeader,
+    LayoutAside,
+    LayoutFooter,
+    LayoutArticle,
+  },
+ 
+};
 </script>
 
-<style>
+<style lang="less">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  // .main {
+  //   display: flex;
+  //   width: 100%;
+  //   height: 100vh;
+  //   overflow: hidden;
+  //   .main-left{
+  //     width: 18%;
+  //   }
+  // }
+  // .footer{
+  //   width: 100%;
+  //   height: 18%;
+  //   position: absolute;
+  //   bottom: 0;
+  //   height: 60px;
+  // }
 }
 </style>
