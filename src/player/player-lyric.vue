@@ -1,6 +1,7 @@
 <template>
   <div class="lyric-container scroll"
        :style="{height:height}"
+<<<<<<< HEAD
        ref="lyric">
     <ul>
          <li class="lyric-line"
@@ -8,6 +9,13 @@
           ref="liItem"
           :key="index"
           :style="{height:lineHeight}"
+=======
+       ref="scroll">
+    <ul>
+      <li class="lyric-line"
+          v-for="(line,index) in lyricArray"
+          :key="index"
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
           :class="[index == lyricIndex ? 'player-action' : '']">{{line[1]}}</li>
     </ul>
 
@@ -31,6 +39,7 @@ export default {
       type: Boolean,
       default: false,
     },
+<<<<<<< HEAD
     lineHeight: {
       type: String,
       default: '30px',
@@ -38,6 +47,11 @@ export default {
      height: {
       type: String,
       default: '330px',
+=======
+    height: {
+      type: String,
+      default: '300px',
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
     },
     /**在middle为true时，即列表形式歌单时有效，
      * 作用：设置第几行歌词滚动
@@ -48,7 +62,10 @@ export default {
       default: 5,
     },
   },
+<<<<<<< HEAD
   
+=======
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
   data() {
     return {
       lyricArray: [], //转换后的歌词数组
@@ -63,16 +80,25 @@ export default {
       /* 格式化歌词 */
       this.lyricIndex = -1
       this.midIndex = 0
+<<<<<<< HEAD
       this.lyricArray = parseLyric(this.lyric)
       /**歌词改变，歌词列表刷新后重新计算刷新滚动条 */
       this.$nextTick(() => {
         this.$refs.lyric.scrollTo(0, 0)
       })
+=======
+      this.lyricArray = parseLyric(this.lyric);
+      /**歌词改变，歌词列表刷新后重新计算刷新滚动条 */
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
     },
     /**监听歌曲播放时间，滚动歌词 */
     currentTime() {
       /**歌词对应时间判断 */
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
       let len = this.lyricArray.length
       for (let i = 0; i < len; i++) {
         const line = this.lyricArray[i]
@@ -90,6 +116,7 @@ export default {
               this.lyricIndex < this.scrollNum ||
               this.lyricIndex > this.lyricArray.length - this.scrollNum
             )
+<<<<<<< HEAD
               return
             /**拖动进度条小球时不能自动滚动 */
             if (!this.isDarg) {
@@ -113,11 +140,26 @@ export default {
               // })
             }
           } else {
+=======
+              return;
+             /**拖动进度条小球时不能自动滚动 */
+            if (!this.isDarg) {
+              
+              this.$refs.scroll.scrollTo(0,
+                -30 * (this.lyricIndex - this.scrollNum),
+              );
+            }
+          }else {
+            this.$refs.scroll.scrollTo(0,-30 * this.lyricIndex, false);
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
           }
         }
       }
     },
+<<<<<<< HEAD
     
+=======
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
   },
 }
 </script>
@@ -125,7 +167,11 @@ export default {
 <style lang="less" scoped>
 .lyric-container {
   width: 100%;
+<<<<<<< HEAD
   
+=======
+  height: 300px;
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
   overflow: auto;
   overflow-x: hidden;
   font-size: 12px;
@@ -134,12 +180,19 @@ export default {
   list-style-type: none;
   height: 30px;
   line-height: 30px;
+<<<<<<< HEAD
   transition: all 0.5s;
+=======
+  padding: 5px 0px;
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
 /* 滚动条样式 */
 .scroll::-webkit-scrollbar {
   width: 8px;

@@ -28,6 +28,7 @@ export const reqLogin = (data) =>request({
     password:data.password,
   }
 });
+<<<<<<< HEAD
 // 登出账号
 export const reqLogout = () => request({
   url:'/logout',
@@ -37,6 +38,11 @@ export const reqLogout = () => request({
 //获取qrcode的钥匙
 export const reqQrcode = ()=>request({
   url:'/login/qr/key',
+=======
+//获取qrcode的钥匙
+export const reqQrcode = ()=>request({
+  url:'/login/qrcode/unikey',
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
   method:'post',
 })
 ///login/qrcode/client/login

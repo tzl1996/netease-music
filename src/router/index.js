@@ -10,7 +10,11 @@ const originalPush = VueRouter.prototype.push
 Vue.use(VueRouter);
 
 const router = new VueRouter({
+<<<<<<< HEAD
     mode:'history',
+=======
+    mode:'hash',
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
     base:process.env.BASE_URL,
     routes,
 })

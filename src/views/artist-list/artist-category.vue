@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
   <div class="artists-container" >
+=======
+  <div class="artists-container">
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
     <div class="artist-category">
       <div class="areas">
         <div class="title">语种：</div>
@@ -66,8 +70,12 @@ export default {
     this.getArtist()
     this.$bus.$on('changeOffset', (page) => {
       this.offset = page;
+<<<<<<< HEAD
       this.getArtist();
       
+=======
+      this.getArtist()
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
     })
   },
   methods: {

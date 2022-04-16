@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
   <div class="article-container scroll" ref="scroll">
+=======
+  <div class="article-container scroll">
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
     <!-- loading图标 -->
     <!-- <div class="loading" v-show="isLoading">
       <div class="loading-icon">
@@ -16,11 +20,14 @@ export default {
   data() {
     return {}
   },
+<<<<<<< HEAD
   mounted(){
     this.$bus.$on('scrollToTop',() =>{
       this.$refs.scroll.scrollTop = 0;
     })
   },
+=======
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
   computed: {
     isLoading() {
       return this.$store.state.isloading

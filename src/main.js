@@ -13,14 +13,22 @@ Vue.use(VueLazyload, {
   loading: 'https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png',
 })
 Vue.config.productionTip = false
+<<<<<<< HEAD
 import {Button, Icon,Input,Slider,Popover,Carousel,CarouselItem,Loading,Table,TableColumn,Pagination,Form,FormItem,MessageBox,Message } from 'element-ui';
+=======
+import {Button, Icon,Input,Slider,Popover,Carousel,carouselItem,Loading,Table,TableColumn,Pagination,Form,FormItem,MessageBox,Message } from 'element-ui';
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
 Vue.use(Button);
 Vue.use(Icon);
 Vue.use(Input);
 Vue.use(Slider);
 Vue.use(Popover);
 Vue.use(Carousel);
+<<<<<<< HEAD
 Vue.use(CarouselItem);
+=======
+Vue.use(carouselItem);
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
 Vue.use(Loading);
 Vue.use(Table);
 Vue.use(TableColumn);

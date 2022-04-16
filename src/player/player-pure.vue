@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
   <div class="playpure scroll" ref="scroll">
+=======
+  <div class="playpure scroll">
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
     <div class="display-container">
       <div class="display-top">
         <div class="display-music">
@@ -22,8 +26,12 @@
             </div>
             <PlayerLyric :lyric="lyric"
             :currentTime="currentTime"
+<<<<<<< HEAD
             :middle=true 
             />
+=======
+            :middle=true />
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
           </div>
         </div>
         <div class="cancel-display" @click="cancelShowPure">
@@ -74,12 +82,16 @@ export default {
     this.$bus.$on('changeOffset',(page) =>{
       this.offset = page
       this.getComment()
+<<<<<<< HEAD
     });
      
     this.$bus.$on('scrollToTop',() =>{
       this.$refs.scroll.scrollTop = 500;
     })
   
+=======
+    })
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
   },
   computed:{
     barStyle(){
@@ -138,7 +150,11 @@ export default {
 }
 .display-music{
   flex: 1;
+<<<<<<< HEAD
   height: 500px;
+=======
+  height: 400px;
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
   position: relative;
   display: flex;
   .cover{

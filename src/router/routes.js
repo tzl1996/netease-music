@@ -48,7 +48,11 @@ const routes = [
   //歌手详情页
   {
     path: '/artist-detail',
+<<<<<<< HEAD
     component: () =>import('views/artist-detail/artist-detail'),
+=======
+    component: ArtistDetail,
+>>>>>>> dc085efa91d0fcb852275653c2ebd059be248b1d
     name:'artist-detail'
   },
   //MV
