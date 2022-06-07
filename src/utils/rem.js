@@ -1,15 +1,18 @@
 export const remBase = 14;
+// const maxFontSize = 16;
+// const minFontSize = 10;
+
 let htmlFontSize
 (function () {
     const calc = function () {
-        const maxFontSize = 18
-        const minFontSize = 14
+        // const maxFontSize = 18
+        // const minFontSize = 14
         const html = document.getElementsByTagName('html')[0];
         const width = html.clientWidth;
         let size = remBase * (width / 1440);
-        size = Math.min(maxFontSize, size)
-        size = Math.max(minFontSize, size)
-        html.style.fontSize = size + 'px'
+        // size = Math.min(maxFontSize, size)
+        // size = Math.max(minFontSize, size)
+        html.style.fontSize = size + 'px'   
 
         htmlFontSize = size;
 

@@ -20,7 +20,7 @@
 
     <!-- 播放详情进入页 -->
     <transition name="pure-slide">
-      <PlayerPure v-if="isPlayPure"
+      <PlayerPure v-show="isPlayPure"
                   :song="playList[currentIndex]"
                   :lyric="lyric"
                   :currentTime="currentTime" />
@@ -188,6 +188,7 @@ export default {
     /**list是音乐列表，index是要播放的音乐在列表中的位置，path是当前播放音乐的路由路径,musicList是歌曲信息*/
     this.$bus.$on('playMusic', (playList, index, musicList, id) => {
       this.id = id
+      console.log('id',id)
       this.musicList = musicList
       /**初始化播放列表 */
       this.playList = []

@@ -6,6 +6,7 @@ import store from './store'
 import './assets/icon/iconfont.css'
 // 懒加载
 import VueLazyload from 'vue-lazyload'
+
 //引入自适应响应
 import 'utils/rem'
 // or with options

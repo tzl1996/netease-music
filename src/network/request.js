@@ -1,7 +1,7 @@
 import axios from 'axios'
 import $store from '@/store/index'
 
-const baseURL="https://neteaseapi-fawn.vercel.app";
+const baseURL="http://localhost:3000";
 
 let ajaxTimer = 0;
 export function request(config){
